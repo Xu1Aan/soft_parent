@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ihrm_common/ihrm_common.iml" filepath="$PROJECT_DIR$/ihrm_common/ihrm_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm_common_model/ihrm_common_model.iml" filepath="$PROJECT_DIR$/ihrm_common_model/ihrm_common_model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm_company/ihrm_company.iml" filepath="$PROJECT_DIR$/ihrm_company/ihrm_company.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm_employee/ihrm_employee.iml" filepath="$PROJECT_DIR$/ihrm_employee/ihrm_employee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm_eureka/ihrm_eureka.iml" filepath="$PROJECT_DIR$/ihrm_eureka/ihrm_eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm_parent.iml" filepath="$PROJECT_DIR$/ihrm_parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm_system/ihrm_system.iml" filepath="$PROJECT_DIR$/ihrm_system/ihrm_system.iml" />
+    </modules>
+  </component>
+</project>
