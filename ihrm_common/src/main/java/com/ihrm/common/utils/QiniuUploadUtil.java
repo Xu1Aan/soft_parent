@@ -12,15 +12,15 @@ import java.util.Date;
 
 public class QiniuUploadUtil {
 
-    private static final String accessKey = "COuoDRVa7JLsuurzIvQSI_pEDceHDw3yGfJEmvwv";
-    private static final String secretKey = "3RWpTjB5Jxg3QosUFr4mxbHXJ5JR2m6AHQqYsSlr";
-    private static final String bucket = "ihrm-bucket";
-    private static final String prix = "http://pkbivgfrm.bkt.clouddn.com/";
+    private static final String accessKey = "RttDKxeS-f-Vosd9-o2g66-dRHpxhK2XTRBtxzTy";
+    private static final String secretKey = "Q_wOly_gKftGoivfG7l-MFwjTFX6duS2QHv3e3vt";
+    private static final String bucket = "pzhuweb";
+    private static final String domain = "http://qpufgr1xb.hn-bkt.clouddn.com/";
     private UploadManager manager;
 
     public QiniuUploadUtil() {
         //初始化基本配置
-        Configuration cfg = new Configuration(Zone.zone0());
+        Configuration cfg = new Configuration(Zone.zone2());
         //创建上传管理器
         manager = new UploadManager(cfg);
     }
@@ -35,7 +35,7 @@ public class QiniuUploadUtil {
             Response response = manager.put(bytes, imgName, upToken);
             DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
             //返回请求地址
-            return prix+putRet.key+"?t="+new Date().getTime();
+            return domain+putRet.key+"?t="+new Date().getTime();
         } catch (Exception ex) {
             ex.printStackTrace();
         }

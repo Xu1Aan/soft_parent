@@ -29,7 +29,7 @@ public class BaiduAiUtil {
 
     public BaiduAiUtil() {
         options.put("quality_control", "NORMAL");
-        options.put("liveness_control", "LOW");
+//        options.put("liveness_control", "LOW");
     }
 
     @PostConstruct
@@ -52,6 +52,7 @@ public class BaiduAiUtil {
         // 人脸注册
         JSONObject res = client.addUser(image, IMAGE_TYPE, groupId, userId, options);
         Integer errorCode = res.getInt("error_code");
+        System.out.println(errorCode);
         return errorCode == 0 ? true : false;
     }
 

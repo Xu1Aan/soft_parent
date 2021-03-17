@@ -19,6 +19,7 @@ public enum ResultCode {
     SERVER_ERROR(false,99999,"抱歉，系统繁忙，请稍后重试！"),
     FAILSELECT(false,10004,"选择失败,该考试已选择"),
     FAILTEST(false,10005,"你还未选课"),
+    FAILCANCEL(false,10006,"退选失败,该考试无法退选"),
 
     //---用户操作返回码  2xxxx----
     MOBILEORPASSWORDERROR(false,20001,"用户名或密码错误");

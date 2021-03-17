@@ -18,7 +18,7 @@
 
     <packaging>pom</packaging>
     <name>ihrm_parent</name>
-    <description>IHRM-黑马程序员</description>
+    <description>IHRM-sass</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -47,6 +47,8 @@
     </dependencyManagement>
 
     <dependencies>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

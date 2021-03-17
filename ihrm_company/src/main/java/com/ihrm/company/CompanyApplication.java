@@ -5,6 +5,8 @@ import com.ihrm.common.utils.JwtUtils;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 
@@ -14,13 +16,18 @@ import org.springframework.context.annotation.Bean;
 @EntityScan(value="com.ihrm.domain.company")
 //3.注册到eureka
 @EnableEurekaClient
-public class CompanyApplication {
+public class CompanyApplication extends SpringBootServletInitializer {
 
     /**
      * 启动方法
      */
     public static void main(String[] args) {
         SpringApplication.run(CompanyApplication.class,args);
+    }
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application){
+        return application.sources(CompanyApplication.class);//项目启动类名
     }
 
     @Bean

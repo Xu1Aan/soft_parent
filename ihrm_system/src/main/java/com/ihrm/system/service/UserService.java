@@ -10,7 +10,7 @@ import com.ihrm.system.client.DepartmentFeignClient;
 import com.ihrm.system.dao.RoleDao;
 import com.ihrm.system.dao.UserDao;
 import com.ihrm.system.utils.BaiduAiUtil;
-import com.sun.org.apache.xml.internal.security.utils.Base64;
+import org.bouncycastle.util.encoders.Base64;;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -230,13 +230,14 @@ public class UserService extends BaseService{
 
         //判断是否已经注册面部信息
         Boolean aBoolean = baiduAiUtil.faceExist(id);
-        String imgBase64 = Base64.encode(file.getBytes());
+        String imgBase64 = Base64.toBase64String(file.getBytes());
+        System.out.println(aBoolean);
         if (aBoolean) {
             //更新
             baiduAiUtil.faceUpdate(id,imgBase64);
         }else{
             //注册
-            baiduAiUtil.faceRegister(id,imgBase64);
+            Boolean aBoolean1 = baiduAiUtil.faceRegister(id, imgBase64);
         }
         //4.返回
         return imgUrl;

@@ -132,12 +132,14 @@ public class TestController extends BaseController {
     }
 
     @RequestMapping(value = "/test/cancel/{id}", method = RequestMethod.DELETE)
-    public Result cancelTest(@PathVariable(value = "id") String id) {
-        System.out.println(id);
+    public Result cancelTest(@PathVariable(value = "id") String id){
+        if(testService.testCancelById(id,userId)){
+            return new Result(ResultCode.FAILCANCEL);
+        }
         boolean flag = testService.cancelById(id, userId);
-        if(flag) {
-            return new Result(ResultCode.SUCCESS);
-        }else {
+        if(flag){
+                return new Result(ResultCode.SUCCESS);
+        }else{
             return new Result(ResultCode.FAIL);
         }
     }

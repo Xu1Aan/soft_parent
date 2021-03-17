@@ -202,7 +202,7 @@ public class TestService {
             for (String id : teacher) {
                 User user = userDao.findById(id).get();
                 if (oldTestUser != null && j < oldTestUser.size()) {
-                    TestUser oldtestUser = oldTestUser.get(j++);
+                    TestUser oldtestUser = oldTestUser.get(j);
                     if (id.equals(oldtestUser.getUserId())) ;
                     oldTestUser.remove(oldtestUser);
                     user.setTaste(user.getTaste() + 1);
@@ -282,7 +282,6 @@ public class TestService {
         return  addressList;
     }
 
-
     @Transactional
     public boolean selectTest(TestUser testUser) {
         List<TestUser> testUsers = testUserDao.findByTestIdAndUserId(testUser.getTestId(), testUser.getUserId());
@@ -342,6 +341,19 @@ public class TestService {
             return "无考试地址（或见通知)";
         }
 
+    }
+
+    public boolean testCancelById(String testId,String userId){
+        if(testUserDao.existsByTestIdAndUserId(testId,userId)){
+        List<TestUser> testUser = testUserDao.findByTestIdAndUserId(testId,userId);
+        if(testUser.get(0).getIsTeacher()==1){
+            System.out.println(testUser.get(0).getIsTeacher());
+            return true;
+        }
+        else
+            return false;
+        }else
+            return false;
     }
 
     @Transactional
