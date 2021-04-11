@@ -1,0 +1,35 @@
+#微服务注册到eureka配置
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6868/eureka/
+#服务配置
+server:
+  port: 9002
+#spring配置
+spring:
+  #1.应用配置
+  application:
+    name: soft-system #指定服务名
+  #2.数据库连接池
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/pzhuweb_hrm?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=false
+    username: root
+    password: 980618
+  #3.JPA
+  jpa:
+    database: MySQL
+    show-sql: true
+    open-in-view: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+ai:
+  appId: 18646506
+  apiKey: 3cwxHBXyhrLfpO5KlumAoiOZ
+  secretKey: KY7EsbmjS3SbGiRofKj9A7ozXV8L6eAP
+  imageType: BASE64
+  groupId: pzhuweb
+qr:
+  url: http://127.0.0.1:8080/#/facelogin

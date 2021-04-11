@@ -4,21 +4,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ihrm</groupId>
-    <artifactId>ihrm_parent</artifactId>
+    <groupId>com.soft</groupId>
+    <artifactId>soft_parent</artifactId>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>ihrm_common</module>
-        <module>ihrm_common_model</module>
-        <module>ihrm_company</module>
-        <module>ihrm_system</module>
-        <module>ihrm_employee</module>
-        <module>ihrm_eureka</module>
+        <module>soft_common</module>
+        <module>soft_common_model</module>
+        <module>soft_company</module>
+        <module>soft_system</module>
+        <module>soft_employee</module>
+        <module>soft_eureka</module>
     </modules>
 
     <packaging>pom</packaging>
-    <name>ihrm_parent</name>
-    <description>IHRM-sass</description>
+    <name>soft_parent</name>
+    <description>soft-sass</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
