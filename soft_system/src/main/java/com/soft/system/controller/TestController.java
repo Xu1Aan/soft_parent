@@ -11,6 +11,7 @@ import com.soft.domain.system.response.TestResult;
 import com.soft.domain.system.response.UserSimpleResult;
 import com.soft.system.service.TestService;
 import com.soft.system.service.UserService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -105,6 +106,7 @@ public class TestController extends BaseController {
 
     }
 
+    @RequiresPermissions(value = "api-test-set")
     @RequestMapping(value = "/test/setTest/{id}", method = RequestMethod.GET)
     public Result findMoreById(@PathVariable(name = "id") String id){
         Test test = testService.findById(id);

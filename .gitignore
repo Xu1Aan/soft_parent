@@ -5,3 +5,10 @@
 /ihrm_employee/target/
 /ihrm_eureka/target/
 /ihrm_system/target/
+
+# IDE
+.vscode
+.idea
+
+# log
+logs
